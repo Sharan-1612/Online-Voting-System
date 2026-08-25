@@ -1,4 +1,4 @@
-# Tamil Nadu Online Voting System
+# Online Voting System
 
 A frontend-based online voting system prototype built using HTML, CSS, and JavaScript. The project demonstrates a simple digital voting workflow including voter authentication, candidate selection, vote casting, and election results.
 

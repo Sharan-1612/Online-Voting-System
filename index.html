@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamil Nadu Online Voting System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                </svg>
+                <h1>TN Voting Portal</h1>
+            </div>
+            <nav>
+                <button id="nav-vote" class="active">Vote</button>
+                <button id="nav-results">Results</button>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Motivating Quote -->
+            <div class="quote-container">
+                <p class="quote">"Your Vote is Your Voice. The power to shape the future of Tamil Nadu is in your
+                    hands!"</p>
+            </div>
+
+            <!-- Login Section -->
+            <section id="login-section" class="active-section">
+                <div class="card glass">
+                    <h2>Voter Authentication</h2>
+                    <p>Please enter your registered Voter ID to cast your vote.</p>
+                    <div class="input-group">
+                        <input type="number" id="voter-id" placeholder="Enter Voter ID (e.g., 101)">
+                        <button id="login-btn" class="primary-btn">Authenticate</button>
+                    </div>
+                    <div id="login-error" class="error-msg hidden">Invalid Voter ID</div>
+                </div>
+            </section>
+
+            <!-- Voting Section -->
+            <section id="voting-section" class="hidden-section">
+                <div class="card glass">
+                    <h2>Welcome, <span id="voter-name" class="highlight"></span>!</h2>
+
+                    <div id="voting-area">
+                        <p class="subtitle">Please select your preferred candidate:</p>
+                        <div class="candidates-grid" id="candidates-grid">
+                            <!-- Candidates will be injected here via JS -->
+                        </div>
+                    </div>
+
+                    <div id="already-voted" class="hidden">
+                        <div class="success-icon">✓</div>
+                        <h3>You have already voted.</h3>
+                        <p>Thank you for participating in the democratic process.</p>
+                    </div>
+
+                    <div id="vote-success" class="hidden">
+                        <div class="success-icon">✓</div>
+                        <h3>Vote recorded successfully.</h3>
+                        <p>Thank you for your vote!</p>
+                    </div>
+
+                    <button id="logout-btn" class="secondary-btn mt-4">Log Out</button>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section id="results-section" class="hidden-section">
+                <div class="card glass w-large">
+                    <h2>Live Election Results</h2>
+                    <div id="winner-announcement" class="winner-banner">
+                        <!-- Winner injected here -->
+                    </div>
+
+                    <table class="results-table">
+                        <thead>
+                            <tr>
+                                <th>Party</th>
+                                <th>Votes</th>
+                                <th>Percentage</th>
+                                <th>Result</th>
+                            </tr>
+                        </thead>
+                        <tbody id="results-tbody">
+                            <!-- Results injected here -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Tamil Nadu Election Commission. Secure Voting System.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
